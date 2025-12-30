@@ -15,127 +15,155 @@
 
 html, body {
   height: 100%;
-  overflow-x: hidden;
   scroll-behavior: smooth;
+  color: white;
 }
 
-/* ---------- BACKGROUND GIF ---------- */
-.bg-gif {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: url("https://media.giphy.com/media/l0HlNQ03J5JxX6lva/giphy.gif") center/cover no-repeat;
-  z-index: -3;
-}
-
-/* ---------- GLASS NAVBAR ---------- */
+/* ================= NAVBAR ================= */
 nav {
   position: fixed;
-  top: 0;
-  width: 100%;
-  padding: 15px 40px;
+  top: 15px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90%;
+  max-width: 1200px;
+  padding: 14px 30px;
+  border-radius: 50px;
+  background: linear-gradient(
+    90deg,
+    rgba(255,255,255,0.08),
+    rgba(255,255,255,0.02)
+  );
+  backdrop-filter: blur(18px);
   display: flex;
   justify-content: space-between;
   align-items: center;
-  backdrop-filter: blur(15px);
-  background: rgba(255,255,255,0.1);
-  z-index: 1000;
+  z-index: 999;
+}
+
+nav .logo {
+  font-size: 22px;
+  font-weight: 700;
 }
 
 nav a {
   color: white;
-  margin: 0 15px;
   text-decoration: none;
+  margin-left: 25px;
   font-weight: 500;
+  opacity: 0.85;
   transition: 0.3s;
 }
 
 nav a:hover {
-  color: cyan;
+  opacity: 1;
+  color: #00ffff;
 }
 
-/* ---------- SECTIONS ---------- */
+/* ================= SECTIONS ================= */
 section {
   min-height: 100vh;
-  padding: 120px 60px;
-  color: white;
   position: relative;
+  padding: 120px 80px;
+  display: flex;
+  align-items: center;
 }
 
-/* ---------- HOME VIDEO ---------- */
+.section-bg {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  z-index: -2;
+}
+
+.section-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to right,
+    rgba(0,0,0,0.75),
+    rgba(0,0,0,0.4)
+  );
+  z-index: -1;
+}
+
+/* ================= HOME ================= */
 #home video {
   position: absolute;
-  top: 0;
-  left: 0;
-  height: 100%;
+  inset: 0;
   width: 100%;
+  height: 100%;
   object-fit: cover;
   z-index: -2;
 }
 
-/* ---------- TEXT ANIMATION ---------- */
-.slide-left {
-  animation: slideLeft 1.5s ease forwards;
+.home-content h1 {
+  font-size: 70px;
+  line-height: 1;
 }
 
-@keyframes slideLeft {
-  from {
-    transform: translateX(-100px);
-    opacity: 0;
-  }
-  to {
-    transform: translateX(0);
-    opacity: 1;
-  }
-}
-
-/* ---------- BIG V ---------- */
 .big-v {
   font-size: 120px;
-  font-weight: 800;
   color: black;
-  display: inline-block;
   animation: float 3s ease-in-out infinite;
 }
 
 @keyframes float {
   0%,100% { transform: translateY(0); }
-  50% { transform: translateY(-15px); }
+  50% { transform: translateY(-12px); }
 }
 
-/* ---------- MUSIC BUTTON ---------- */
+.home-content h2 {
+  margin-top: 15px;
+  font-weight: 400;
+  opacity: 0.9;
+}
+
 .music-btn {
-  margin-top: 30px;
-  padding: 12px 30px;
-  border: none;
+  margin-top: 25px;
+  padding: 12px 28px;
   border-radius: 30px;
+  border: none;
+  cursor: pointer;
   background: cyan;
   color: black;
   font-weight: bold;
-  cursor: pointer;
 }
 
-/* ---------- CARDS ---------- */
-.card {
-  background: rgba(255,255,255,0.1);
-  padding: 25px;
-  margin: 20px 0;
-  border-radius: 15px;
-  backdrop-filter: blur(10px);
+/* ================= TEXT ANIMATION ================= */
+.fade-left {
+  animation: fadeLeft 1.2s ease forwards;
 }
 
-/* ---------- LINKS ---------- */
-a.link {
+@keyframes fadeLeft {
+  from { opacity: 0; transform: translateX(-80px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+/* ================= CONTENT TEXT ================= */
+h1 {
+  font-size: 48px;
+  margin-bottom: 15px;
+}
+
+p {
+  max-width: 600px;
+  line-height: 1.6;
+  opacity: 0.9;
+}
+
+.link {
   color: cyan;
   text-decoration: none;
+  display: inline-block;
+  margin-top: 10px;
 }
 
-/* ---------- RESPONSIVE ---------- */
+/* ================= RESPONSIVE ================= */
 @media (max-width: 768px) {
   section {
-    padding: 100px 25px;
+    padding: 120px 30px;
   }
 
   .big-v {
@@ -147,11 +175,9 @@ a.link {
 
 <body>
 
-<div class="bg-gif"></div>
-
 <!-- NAVBAR -->
 <nav>
-  <div style="color:white;font-weight:700;">VATSAL</div>
+  <div class="logo">V</div>
   <div>
     <a href="#home">Home</a>
     <a href="#about">About</a>
@@ -167,82 +193,73 @@ a.link {
     <source src="From KlickPin CF spider verse edit in 2025 _ Cute fantasy creatures Miles spiderman Spider verse.mp4" type="video/mp4">
   </video>
 
-  <div class="slide-left">
-    <h1>
-      <span class="big-v">V</span>atsal
-    </h1>
+  <div class="home-content fade-left">
+    <h1><span class="big-v">V</span>atsal</h1>
     <h2>Web Developer creating websites for fun</h2>
-
     <button class="music-btn" onclick="toggleMusic()">▶ Play Music</button>
   </div>
 </section>
 
 <!-- ABOUT -->
 <section id="about">
-  <h1 class="slide-left">About Me</h1>
-  <p class="slide-left">
-    I'm Vatsal, a passionate web developer who loves creating futuristic,
-    animated, and interactive websites. I enjoy experimenting with UI/UX,
-    animations, and creative layouts.
-  </p>
+  <div class="section-bg" style="background-image:url('https://i.imgur.com/W5yq5hS.gif')"></div>
+  <div class="section-overlay"></div>
+
+  <div class="fade-left">
+    <h1>About Me</h1>
+    <p>
+      I'm a creative web developer who loves animations, UI effects and futuristic
+      designs. I enjoy building immersive web experiences with motion and depth.
+    </p>
+  </div>
 </section>
 
 <!-- EXPLORE -->
 <section id="explore">
-  <h1 class="slide-left">Spider-Verse</h1>
-  <div class="card slide-left">
+  <div class="section-bg" style="background-image:url('https://i.imgur.com/4AiXzf8.gif')"></div>
+  <div class="section-overlay"></div>
+
+  <div class="fade-left">
+    <h1>Spider-Verse</h1>
     <p>
-      Spider-Man: Into the Spider-Verse explores multiple universes where different
-      Spider-heroes exist.
+      Spider-Man: Into the Spider-Verse explores multiple dimensions and versions of Spider-Man.
     </p>
-    <a class="link" target="_blank" href="https://www.imdb.com/title/tt4633694/">View on IMDb</a>
+    <a class="link" href="https://www.imdb.com/title/tt4633694/" target="_blank">
+      Official Movie Page →
+    </a>
   </div>
 </section>
 
 <!-- MOVIES -->
 <section id="movies">
-  <h1 class="slide-left">Spider-Man Movies</h1>
+  <div class="section-bg" style="background-image:url('https://i.imgur.com/4YF6yV0.gif')"></div>
+  <div class="section-overlay"></div>
 
-  <div class="card">
-    <a class="link" href="https://www.imdb.com/title/tt0145487/" target="_blank">Spider-Man (2002)</a>
-  </div>
-
-  <div class="card">
-    <a class="link" href="https://www.imdb.com/title/tt0316654/" target="_blank">Spider-Man 2</a>
-  </div>
-
-  <div class="card">
-    <a class="link" href="https://www.imdb.com/title/tt0413300/" target="_blank">Spider-Man 3</a>
-  </div>
-
-  <div class="card">
+  <div class="fade-left">
+    <h1>Spider-Man Movies</h1>
+    <a class="link" href="https://www.imdb.com/title/tt0145487/" target="_blank">Spider-Man (2002)</a><br>
+    <a class="link" href="https://www.imdb.com/title/tt0316654/" target="_blank">Spider-Man 2</a><br>
+    <a class="link" href="https://www.imdb.com/title/tt0413300/" target="_blank">Spider-Man 3</a><br>
     <a class="link" href="https://www.imdb.com/title/tt10872600/" target="_blank">No Way Home</a>
   </div>
 </section>
 
 <!-- CONTACT -->
 <section id="contact">
-  <h1 class="slide-left">Contact Me</h1>
+  <div class="section-bg" style="background-image:url('https://i.imgur.com/nvM6P8P.gif')"></div>
+  <div class="section-overlay"></div>
 
-  <div class="card">
-    📧 Email:
-    <a class="link" href="mailto:vatsal@example.com">vatsal@example.com</a>
-  </div>
-
-  <div class="card">
-    🌐 GitHub:
-    <a class="link" href="https://github.com/" target="_blank">github.com/vatsal</a>
-  </div>
-
-  <div class="card">
-    📸 Instagram:
-    <a class="link" href="https://instagram.com/" target="_blank">@vatsal</a>
+  <div class="fade-left">
+    <h1>Contact Me</h1>
+    <p>Email: vatsal@example.com</p>
+    <p>Instagram: @vatsal.dev</p>
+    <p>GitHub: github.com/vatsal</p>
   </div>
 </section>
 
 <!-- MUSIC -->
 <audio id="bgMusic" loop>
-  <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mp3">
+  <source src="Robin Hustin x TobiMorrow - Light It Up (feat. Jex) Future Bounce NCS - Copyright Free Music - NoCopyrightSounds.mp3" type="audio/mp3">
 </audio>
 
 <script>
