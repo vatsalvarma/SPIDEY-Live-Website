@@ -1,1 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>V | Web Dev</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap" rel="stylesheet">
+
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+  scroll-behavior: smooth;
+}
+
+body {
+  background: black;
+  color: white;
+  overflow-x: hidden;
+}
+
+/* ---------- NAVBAR ---------- */
+nav {
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90%;
+  padding: 15px 30px;
+  backdrop-filter: blur(15px);
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 20px;
+  display: flex;
+  justify-content: space-between;
+  z-index: 1000;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  margin: 0 15px;
+  font-weight: 500;
+  transition: 0.3s;
+}
+
+nav a:hover {
+  color: cyan;
+}
+
+/* ---------- SECTIONS ---------- */
+section {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  padding: 80px;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+
+/* overlay */
+section::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.55);
+}
+
+.content {
+  position: relative;
+  z-index: 2;
+  max-width: 700px;
+}
+
+/* ---------- HOME ---------- */
+#home {
+  background-image: url("From KlickPin CF spider verse edit in 2025 _ Cute fantasy creatures Miles spiderman Spider verse.mp4");
+}
+
+.big-v {
+  font-size: 140px;
+  font-weight: 800;
+  color: black;
+  display: inline-block;
+  animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%,100% { transform: translateY(0); }
+  50% { transform: translateY(-15px); }
+}
+
+.slide-in {
+  animation: slideIn 1.5s ease forwards;
+}
+
+@keyframes slideIn {
+  from { opacity: 0; transform: translateX(-80px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+/* ---------- AUDIO BUTTON ---------- */
+.audio-btn {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  backdrop-filter: blur(10px);
+  background: rgba(255,255,255,0.15);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 22px;
+  transition: 0.3s;
+  z-index: 999;
+}
+
+.audio-btn:hover {
+  transform: scale(1.1);
+}
+
+/* ---------- ABOUT ---------- */
+#about {
+  background-image: url("From KlickPin CF YASIR DAHM _ Trippy iphone wallpaper Pixel art background Marvel spiderman art.gif");
+}
+
+/* ---------- EXPLORE ---------- */
+#explore {
+  background-image: url("From KlickPin CF Pin on SPIDER-MAN INTO_ACROSS THE SPIDER-VERSE.gif");
+}
+
+/* ---------- MOVIES ---------- */
+#movies {
+  background-image: url("From KlickPin CF Review Spider-Man Into The Spider-Verse - New Yorker Cartoonist Jason Chatfield _ Miles morales spiderman Spiderman gif Miles spiderman.gif");
+}
+
+/* ---------- CONTACT ---------- */
+#contact {
+  background-image: url("From KlickPin CF A Man Riding A Skateboard Down The Side Of A Tall Building BA0 _ Marvel spiderman art Spiderman spider Marvel heroes.gif");
+}
+
+/* Links */
+a.link {
+  color: cyan;
+  text-decoration: none;
+  display: block;
+  margin: 10px 0;
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<nav>
+  <div><b>V</b></div>
+  <div>
+    <a href="#home">Home</a>
+    <a href="#about">About</a>
+    <a href="#explore">Explore</a>
+    <a href="#movies">Movies</a>
+    <a href="#contact">Contacts</a>
+  </div>
+</nav>
+
+<!-- HOME -->
+<section id="home">
+  <div class="content">
+    <h1 class="slide-in">
+      <span class="big-v">V</span>atsal Varma
+    </h1>
+    <p class="slide-in" style="animation-delay:0.3s">
+      I’m a web developer creating websites for fun 🚀
+    </p>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="content slide-in">
+    <h1>About Me</h1>
+    <p>
+      I'm a creative web developer who loves animations, UI effects and building
+      futuristic web experiences. I enjoy experimenting with motion, glass UI,
+      and interactive designs.
+    </p>
+  </div>
+</section>
+
+<!-- EXPLORE -->
+<section id="explore">
+  <div class="content slide-in">
+    <h1>Spider-Verse</h1>
+    <p>
+      Spider-Man: Into the Spider-Verse is a visually stunning animated movie
+      that explores multiple universes and different versions of Spider-Man.
+    </p>
+    <a class="link" href="https://www.sonypictures.com/movies/spidermanintothespiderverse" target="_blank">
+      Official Movie Page →
+    </a>
+  </div>
+</section>
+
+<!-- MOVIES -->
+<section id="movies">
+  <div class="content slide-in">
+    <h1>Spider-Man Movies</h1>
+    <a class="link" href="https://www.imdb.com/title/tt0145487/" target="_blank">Spider-Man (2002)</a>
+    <a class="link" href="https://www.imdb.com/title/tt0316654/" target="_blank">Spider-Man 2</a>
+    <a class="link" href="https://www.imdb.com/title/tt0413300/" target="_blank">Spider-Man 3</a>
+    <a class="link" href="https://www.imdb.com/title/tt4633694/" target="_blank">Into the Spider-Verse</a>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="content slide-in">
+    <h1>Contact Me</h1>
+    <p>Email: vatsal@example.com</p>
+    <p>Instagram: @vatsal.dev</p>
+    <p>GitHub: github.com/vatsal</p>
+  </div>
+</section>
+
+<!-- AUDIO -->
+<audio id="bgm" loop>
+  <source src="Robin Hustin x TobiMorrow - Light It Up (feat. Jex) Future Bounce NCS - Copyright Free Music - NoCopyrightSounds.mp3" type="audio/mp3">
+</audio>
+
+<div class="audio-btn" onclick="toggleMusic()">🎵</div>
+
+<script>
+const music = document.getElementById("bgm");
+let playing = false;
+
+function toggleMusic() {
+  if (playing) {
+    music.pause();
+  } else {
+    music.play();
+  }
+  playing = !playing;
+}
+</script>
+
+</body>
+</html>
 
