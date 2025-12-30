@@ -93,6 +93,7 @@ section {
   font-size: 120px;
   font-weight: 800;
   color: black;
+  display: inline-block;
   animation: float 3s ease-in-out infinite;
 }
 
@@ -170,11 +171,14 @@ a.link {
   <div class="section-bg" style="background-image:url('https://media.giphy.com/media/26tn33aiTi1jkl6H6/giphy.gif')"></div>
   <div class="overlay"></div>
 
-  <h1 class="slide-left">About Me</h1>
-  <p class="slide-left">
-    I'm Vatsal, a passionate web developer who loves futuristic UI, animations,
-    and creative interactions.
-  </p>
+  <div class="section-content slide-left">
+    <h1 class="section-title">About Me</h1>
+    <p class="section-desc">
+      I'm a creative web developer who loves animations, UI effects and building
+      futuristic web experiences. I enjoy experimenting with motion, glass UI,
+      and interactive designs.
+    </p>
+  </div>
 </section>
 
 <!-- EXPLORE -->
@@ -182,36 +186,50 @@ a.link {
   <div class="section-bg" style="background-image:url('https://media.giphy.com/media/3o6Zt6ML6BklcajjsA/giphy.gif')"></div>
   <div class="overlay"></div>
 
-  <h1 class="slide-left">Spider-Verse</h1>
-  <div class="card slide-left">
-    <p>Explore multiple universes and versions of Spider-Man.</p>
-    <a class="link" href="https://www.imdb.com/title/tt4633694/" target="_blank">View on IMDb</a>
+  <div class="section-content slide-left">
+    <h1 class="section-title">Spider-Verse</h1>
+    <p class="section-desc">
+      Spider-Man: Into the Spider-Verse explores multiple universes and
+      different versions of Spider-Man.
+    </p>
+    <a class="section-link" target="_blank"
+      href="https://www.imdb.com/title/tt4633694/">Official Movie Page →</a>
   </div>
 </section>
+
 
 <!-- MOVIES -->
 <section id="movies">
   <div class="section-bg" style="background-image:url('https://media.giphy.com/media/l41lQ7D5Kk7K8x7ZK/giphy.gif')"></div>
   <div class="overlay"></div>
 
-  <h1 class="slide-left">Spider-Man Movies</h1>
+  <div class="section-content slide-left">
+    <h1 class="section-title">Spider-Man Movies</h1>
 
-  <div class="card"><a class="link" href="https://www.imdb.com/title/tt0145487/" target="_blank">Spider-Man (2002)</a></div>
-  <div class="card"><a class="link" href="https://www.imdb.com/title/tt0316654/" target="_blank">Spider-Man 2</a></div>
-  <div class="card"><a class="link" href="https://www.imdb.com/title/tt0413300/" target="_blank">Spider-Man 3</a></div>
-  <div class="card"><a class="link" href="https://www.imdb.com/title/tt10872600/" target="_blank">No Way Home</a></div>
+    <a class="section-link" href="https://www.imdb.com/title/tt0145487/" target="_blank">Spider-Man (2002)</a><br>
+    <a class="section-link" href="https://www.imdb.com/title/tt0316654/" target="_blank">Spider-Man 2</a><br>
+    <a class="section-link" href="https://www.imdb.com/title/tt0413300/" target="_blank">Spider-Man 3</a><br>
+    <a class="section-link" href="https://www.imdb.com/title/tt10872600/" target="_blank">Into the Spider-Verse</a>
+  </div>
 </section>
+
 
 <!-- CONTACT -->
 <section id="contact">
   <div class="section-bg" style="background-image:url('https://media.giphy.com/media/l0MYC0LajbaPoEADu/giphy.gif')"></div>
   <div class="overlay"></div>
 
-  <h1 class="slide-left">Contact Me</h1>
-  <div class="card">📧 Email: <a class="link" href="mailto:vatsal@example.com">vatsal@example.com</a></div>
-  <div class="card">🌐 GitHub: <a class="link" href="https://github.com/" target="_blank">github.com/vatsal</a></div>
-  <div class="card">📸 Instagram: <a class="link" href="https://instagram.com/" target="_blank">@vatsal</a></div>
+  <div class="section-content slide-left">
+    <h1 class="section-title">Contact Me</h1>
+
+    <p class="section-desc">
+      📧 <a class="section-link" href="mailto:vatsal@example.com">vatsal@example.com</a><br>
+      🌐 <a class="section-link" href="https://github.com/" target="_blank">github.com/vatsal</a><br>
+      📸 <a class="section-link" href="https://instagram.com/" target="_blank">@vatsal</a>
+    </p>
+  </div>
 </section>
+
 
 <!-- MUSIC -->
 <audio id="bgMusic" loop>
