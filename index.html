@@ -19,7 +19,7 @@ html, body {
   scroll-behavior: smooth;
 }
 
-/* ---------- BACKGROUND WRAPPER ---------- */
+/* ================= BACKGROUND ================= */
 .section-bg {
   position: absolute;
   inset: 0;
@@ -31,11 +31,11 @@ html, body {
 .overlay {
   position: absolute;
   inset: 0;
-  background: rgba(0,0,0,0.55);
+  background: linear-gradient(to right, rgba(0,0,0,0.7), rgba(0,0,0,0.3));
   z-index: -1;
 }
 
-/* ---------- GLASS NAVBAR ---------- */
+/* ================= NAVBAR ================= */
 nav {
   position: fixed;
   top: 0;
@@ -45,7 +45,7 @@ nav {
   justify-content: space-between;
   align-items: center;
   backdrop-filter: blur(15px);
-  background: rgba(255,255,255,0.1);
+  background: rgba(255,255,255,0.08);
   z-index: 1000;
 }
 
@@ -60,15 +60,15 @@ nav a:hover {
   color: cyan;
 }
 
-/* ---------- SECTIONS ---------- */
+/* ================= SECTIONS ================= */
 section {
   min-height: 100vh;
   padding: 120px 60px;
-  color: white;
   position: relative;
+  color: white;
 }
 
-/* ---------- HOME VIDEO (UNCHANGED) ---------- */
+/* ===== HOME (UNCHANGED) ===== */
 #home video {
   position: absolute;
   inset: 0;
@@ -78,17 +78,17 @@ section {
   z-index: -2;
 }
 
-/* ---------- TEXT ANIM ---------- */
+/* ===== TEXT ANIMATION ===== */
 .slide-left {
   animation: slideLeft 1.5s ease forwards;
 }
 
 @keyframes slideLeft {
-  from { transform: translateX(-100px); opacity: 0; }
+  from { transform: translateX(-120px); opacity: 0; }
   to { transform: translateX(0); opacity: 1; }
 }
 
-/* ---------- BIG V ---------- */
+/* ===== FLOATING V ===== */
 .big-v {
   font-size: 120px;
   font-weight: 800;
@@ -102,7 +102,7 @@ section {
   50% { transform: translateY(-15px); }
 }
 
-/* ---------- BUTTON ---------- */
+/* ===== MUSIC BUTTON ===== */
 .music-btn {
   margin-top: 30px;
   padding: 12px 30px;
@@ -113,21 +113,40 @@ section {
   cursor: pointer;
 }
 
-/* ---------- CARD ---------- */
-.card {
-  background: rgba(255,255,255,0.1);
-  padding: 25px;
-  margin: 20px 0;
-  border-radius: 15px;
-  backdrop-filter: blur(10px);
+/* ================= CONTENT LAYOUT ================= */
+.section-content {
+  max-width: 650px;
+  margin-top: 80px;
+  margin-left: 60px;
+  position: relative;
+  z-index: 2;
 }
 
-a.link {
-  color: cyan;
+.section-title {
+  font-size: 48px;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.section-desc {
+  font-size: 18px;
+  line-height: 1.7;
+  opacity: 0.9;
+}
+
+.section-link {
+  display: inline-block;
+  margin-top: 20px;
+  color: #00ffff;
+  font-weight: 500;
   text-decoration: none;
 }
 
-/* ---------- RESPONSIVE ---------- */
+.section-link:hover {
+  text-decoration: underline;
+}
+
+/* ===== RESPONSIVE ===== */
 @media (max-width: 768px) {
   section {
     padding: 100px 25px;
@@ -189,14 +208,13 @@ a.link {
   <div class="section-content slide-left">
     <h1 class="section-title">Spider-Verse</h1>
     <p class="section-desc">
-      Spider-Man: Into the Spider-Verse explores multiple universes and
-      different versions of Spider-Man.
+      Spider-Man: Into the Spider-Verse explores multiple universes and different
+      versions of Spider-Man.
     </p>
     <a class="section-link" target="_blank"
       href="https://www.imdb.com/title/tt4633694/">Official Movie Page →</a>
   </div>
 </section>
-
 
 <!-- MOVIES -->
 <section id="movies">
@@ -205,14 +223,12 @@ a.link {
 
   <div class="section-content slide-left">
     <h1 class="section-title">Spider-Man Movies</h1>
-
     <a class="section-link" href="https://www.imdb.com/title/tt0145487/" target="_blank">Spider-Man (2002)</a><br>
     <a class="section-link" href="https://www.imdb.com/title/tt0316654/" target="_blank">Spider-Man 2</a><br>
     <a class="section-link" href="https://www.imdb.com/title/tt0413300/" target="_blank">Spider-Man 3</a><br>
     <a class="section-link" href="https://www.imdb.com/title/tt10872600/" target="_blank">Into the Spider-Verse</a>
   </div>
 </section>
-
 
 <!-- CONTACT -->
 <section id="contact">
@@ -221,7 +237,6 @@ a.link {
 
   <div class="section-content slide-left">
     <h1 class="section-title">Contact Me</h1>
-
     <p class="section-desc">
       📧 <a class="section-link" href="mailto:vatsal@example.com">vatsal@example.com</a><br>
       🌐 <a class="section-link" href="https://github.com/" target="_blank">github.com/vatsal</a><br>
@@ -229,7 +244,6 @@ a.link {
     </p>
   </div>
 </section>
-
 
 <!-- MUSIC -->
 <audio id="bgMusic" loop>
