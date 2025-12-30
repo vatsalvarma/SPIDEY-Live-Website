@@ -1,111 +1,102 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Vatsal | Web Dev</title>
-
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap" rel="stylesheet">
 
 <style>
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
+}
+
+html, body {
+  height: 100%;
+  overflow-x: hidden;
   scroll-behavior: smooth;
 }
 
-body {
-  background: black;
-  color: white;
-  overflow-x: hidden;
+/* ---------- BACKGROUND GIF ---------- */
+.bg-gif {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url("https://media.giphy.com/media/l0HlNQ03J5JxX6lva/giphy.gif") center/cover no-repeat;
+  z-index: -3;
 }
 
-/* NAVBAR */
+/* ---------- GLASS NAVBAR ---------- */
 nav {
   position: fixed;
-  top: 20px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 90%;
-  padding: 15px 30px;
-  backdrop-filter: blur(15px);
-  background: rgba(255,255,255,0.1);
-  border-radius: 20px;
+  top: 0;
+  width: 100%;
+  padding: 15px 40px;
   display: flex;
   justify-content: space-between;
+  align-items: center;
+  backdrop-filter: blur(15px);
+  background: rgba(255,255,255,0.1);
   z-index: 1000;
 }
 
 nav a {
   color: white;
-  text-decoration: none;
   margin: 0 15px;
+  text-decoration: none;
   font-weight: 500;
+  transition: 0.3s;
 }
 
 nav a:hover {
   color: cyan;
 }
 
-/* SECTIONS */
+/* ---------- SECTIONS ---------- */
 section {
   min-height: 100vh;
-  padding: 100px 80px;
+  padding: 120px 60px;
+  color: white;
   position: relative;
-  display: flex;
-  align-items: center;
 }
 
-section::before {
-  content: "";
+/* ---------- HOME VIDEO ---------- */
+#home video {
   position: absolute;
-  inset: 0;
-  background: rgba(0,0,0,0.55);
-}
-
-/* VIDEO */
-.video-section {
-  position: relative;
-  overflow: hidden;
-}
-
-.bg-video {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  min-width: 100%;
-  min-height: 100%;
-  transform: translate(-50%, -50%);
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
   object-fit: cover;
-  filter: brightness(0.4);
-  z-index: -1;
+  z-index: -2;
 }
 
-/* CONTENT */
-.content {
-  position: relative;
-  z-index: 2;
-  max-width: 800px;
+/* ---------- TEXT ANIMATION ---------- */
+.slide-left {
+  animation: slideLeft 1.5s ease forwards;
 }
 
-/* ANIMATION */
-.reveal {
-  opacity: 0;
-  transform: translateX(-80px);
-  transition: 1s ease;
-}
-.reveal.active {
-  opacity: 1;
-  transform: translateX(0);
+@keyframes slideLeft {
+  from {
+    transform: translateX(-100px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
 }
 
-/* BIG V */
+/* ---------- BIG V ---------- */
 .big-v {
-  font-size: 130px;
+  font-size: 120px;
   font-weight: 800;
   color: black;
+  display: inline-block;
   animation: float 3s ease-in-out infinite;
 }
 
@@ -114,169 +105,160 @@ section::before {
   50% { transform: translateY(-15px); }
 }
 
-/* BUTTONS */
-.start-btn, .audio-btn {
-  margin-top: 25px;
-  padding: 15px 30px;
-  border-radius: 40px;
-  border: none;
-  background: rgba(255,255,255,0.2);
-  color: white;
-  font-size: 18px;
-  cursor: pointer;
-  backdrop-filter: blur(10px);
-  transition: 0.3s;
-}
-
-.start-btn:hover,
-.audio-btn:hover {
-  transform: scale(1.1);
-}
-
-/* CONTACT */
-.contact-box {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 20px;
+/* ---------- MUSIC BUTTON ---------- */
+.music-btn {
   margin-top: 30px;
+  padding: 12px 30px;
+  border: none;
+  border-radius: 30px;
+  background: cyan;
+  color: black;
+  font-weight: bold;
+  cursor: pointer;
 }
 
-.contact-card {
-  background: rgba(255,255,255,0.15);
+/* ---------- CARDS ---------- */
+.card {
+  background: rgba(255,255,255,0.1);
   padding: 25px;
-  border-radius: 20px;
-  text-align: center;
-  transition: 0.3s;
+  margin: 20px 0;
+  border-radius: 15px;
+  backdrop-filter: blur(10px);
 }
 
-.contact-card:hover {
-  transform: translateY(-8px);
-  background: rgba(255,255,255,0.25);
-}
-
-.contact-card a {
+/* ---------- LINKS ---------- */
+a.link {
   color: cyan;
   text-decoration: none;
 }
 
-/* BACKGROUNDS */
-#about { background: url("https://media.giphy.com/media/26tPplGWjN0xLybiU/giphy.gif") center/cover; }
-#explore { background: url("https://media.giphy.com/media/xT9IgzoKnwFNmISR8I/giphy.gif") center/cover; }
-#movies { background: url("https://media.giphy.com/media/l0HlQ7LRal0l4h6Lm/giphy.gif") center/cover; }
-#contact { background: url("https://media.giphy.com/media/3o7TKMt1VVNkHV2PaE/giphy.gif") center/cover; }
+/* ---------- RESPONSIVE ---------- */
+@media (max-width: 768px) {
+  section {
+    padding: 100px 25px;
+  }
 
-/* MOBILE */
-@media(max-width:768px){
-  nav { flex-direction: column; gap: 10px; }
-  section { padding: 80px 20px; text-align: center; }
-  .big-v { font-size: 90px; }
+  .big-v {
+    font-size: 80px;
+  }
 }
 </style>
 </head>
 
 <body>
 
+<div class="bg-gif"></div>
+
 <!-- NAVBAR -->
 <nav>
-  <b>V</b>
+  <div style="color:white;font-weight:700;">VATSAL</div>
   <div>
     <a href="#home">Home</a>
     <a href="#about">About</a>
     <a href="#explore">Explore</a>
     <a href="#movies">Movies</a>
-    <a href="#contact">Contact</a>
+    <a href="#contact">Contacts</a>
   </div>
 </nav>
 
 <!-- HOME -->
-<section id="home" class="video-section">
-  <video class="bg-video" autoplay muted loop>
-    <source src="home-video.mp4" type="video/mp4">
+<section id="home">
+  <video autoplay muted loop>
+    <source src="From KlickPin CF spider verse edit in 2025 _ Cute fantasy creatures Miles spiderman Spider verse.mp4" type="video/mp4">
   </video>
 
-  <div class="content reveal">
-    <button class="start-btn" onclick="startExperience()">▶ Start Experience</button>
-    <h1><span class="big-v">V</span>atsal Varma</h1>
-    <p>I’m a web developer creating websites for fun 🚀</p>
-    <div class="audio-btn" onclick="toggleMusic()">🎵 Music</div>
+  <div class="slide-left">
+    <h1>
+      <span class="big-v">V</span>atsal
+    </h1>
+    <h2>Web Developer creating websites for fun</h2>
+
+    <button class="music-btn" onclick="toggleMusic()">▶ Play Music</button>
   </div>
 </section>
 
 <!-- ABOUT -->
 <section id="about">
-  <div class="content reveal">
-    <h1>About Me</h1>
-    <p>I love creating animated, interactive websites with modern UI.</p>
-  </div>
+  <h1 class="slide-left">About Me</h1>
+  <p class="slide-left">
+    I'm Vatsal, a passionate web developer who loves creating futuristic,
+    animated, and interactive websites. I enjoy experimenting with UI/UX,
+    animations, and creative layouts.
+  </p>
 </section>
 
 <!-- EXPLORE -->
 <section id="explore">
-  <div class="content reveal">
-    <h1>Spider-Verse</h1>
-    <p>Explore the multiverse of Spider-Man.</p>
-    <a href="https://www.sonypictures.com/movies/spidermanintothespiderverse" target="_blank">Official Website →</a>
+  <h1 class="slide-left">Spider-Verse</h1>
+  <div class="card slide-left">
+    <p>
+      Spider-Man: Into the Spider-Verse explores multiple universes where different
+      Spider-heroes exist.
+    </p>
+    <a class="link" target="_blank" href="https://www.imdb.com/title/tt4633694/">View on IMDb</a>
   </div>
 </section>
 
 <!-- MOVIES -->
 <section id="movies">
-  <div class="content reveal">
-    <h1>Spider-Man Movies</h1>
-    <a href="https://www.imdb.com/title/tt0145487/" target="_blank">Spider-Man (2002)</a><br>
-    <a href="https://www.imdb.com/title/tt0316654/" target="_blank">Spider-Man 2</a><br>
-    <a href="https://www.imdb.com/title/tt0413300/" target="_blank">Spider-Man 3</a><br>
-    <a href="https://www.imdb.com/title/tt4633694/" target="_blank">Into the Spider-Verse</a>
+  <h1 class="slide-left">Spider-Man Movies</h1>
+
+  <div class="card">
+    <a class="link" href="https://www.imdb.com/title/tt0145487/" target="_blank">Spider-Man (2002)</a>
+  </div>
+
+  <div class="card">
+    <a class="link" href="https://www.imdb.com/title/tt0316654/" target="_blank">Spider-Man 2</a>
+  </div>
+
+  <div class="card">
+    <a class="link" href="https://www.imdb.com/title/tt0413300/" target="_blank">Spider-Man 3</a>
+  </div>
+
+  <div class="card">
+    <a class="link" href="https://www.imdb.com/title/tt10872600/" target="_blank">No Way Home</a>
   </div>
 </section>
 
 <!-- CONTACT -->
 <section id="contact">
-  <div class="content reveal">
-    <h1>Contact Me</h1>
+  <h1 class="slide-left">Contact Me</h1>
 
-    <div class="contact-box">
-      <div class="contact-card">
-        📧 <a href="mailto:vatsal@example.com">vatsal@example.com</a>
-      </div>
-      <div class="contact-card">
-        💻 <a href="https://github.com/vatsal" target="_blank">GitHub</a>
-      </div>
-      <div class="contact-card">
-        📸 <a href="https://instagram.com/vatsal.dev" target="_blank">Instagram</a>
-      </div>
-    </div>
+  <div class="card">
+    📧 Email:
+    <a class="link" href="mailto:vatsal@example.com">vatsal@example.com</a>
+  </div>
+
+  <div class="card">
+    🌐 GitHub:
+    <a class="link" href="https://github.com/" target="_blank">github.com/vatsal</a>
+  </div>
+
+  <div class="card">
+    📸 Instagram:
+    <a class="link" href="https://instagram.com/" target="_blank">@vatsal</a>
   </div>
 </section>
 
-<!-- AUDIO -->
-<audio id="music" loop>
-  <source src="music.mp3" type="audio/mp3">
+<!-- MUSIC -->
+<audio id="bgMusic" loop>
+  <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mp3">
 </audio>
 
 <script>
-const music = document.getElementById("music");
-const video = document.querySelector(".bg-video");
-
-function startExperience() {
-  music.play();
-  video.play();
-  document.querySelector(".start-btn").style.display = "none";
-}
+let music = document.getElementById("bgMusic");
+let playing = false;
 
 function toggleMusic() {
-  if (music.paused) music.play();
-  else music.pause();
+  if (!playing) {
+    music.play();
+    event.target.innerText = "⏸ Pause Music";
+  } else {
+    music.pause();
+    event.target.innerText = "▶ Play Music";
+  }
+  playing = !playing;
 }
-
-const reveals = document.querySelectorAll(".reveal");
-window.addEventListener("scroll", () => {
-  reveals.forEach(el => {
-    if (el.getBoundingClientRect().top < window.innerHeight - 100) {
-      el.classList.add("active");
-    }
-  });
-});
 </script>
 
 </body>
