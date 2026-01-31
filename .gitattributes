@@ -1,0 +1,2 @@
+*.erl linguist-language=Erlang
+*.hrl linguist-language=Erlang
