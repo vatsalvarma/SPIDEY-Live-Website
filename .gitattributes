@@ -1,2 +1,4 @@
 *.erl linguist-language=Erlang
 *.hrl linguist-language=Erlang
+*.erl linguist-detectable=true
+*.hrl linguist-detectable=true
