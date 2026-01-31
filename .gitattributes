@@ -2,3 +2,7 @@
 *.hrl linguist-language=Erlang
 *.erl linguist-detectable=true
 *.hrl linguist-detectable=true
+
+*.java linguist-detectable=false
+*.html linguist-detectable=false
+*.js linguist-detectable=false
